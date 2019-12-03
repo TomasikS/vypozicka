@@ -14,8 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  * @author stefan.tomasik
  */
-
-@Transactional
+ 
 @Repository
 public interface CheckoutRepository extends JpaRepository<Pet, Long> {
 }

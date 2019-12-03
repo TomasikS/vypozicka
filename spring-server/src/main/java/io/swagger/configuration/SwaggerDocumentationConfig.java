@@ -2,17 +2,24 @@ package io.swagger.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2019-11-27T12:29:55.795Z")
 
+
 @Configuration
+@EnableSwagger2
+@EnableWebMvc
 public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
@@ -27,7 +34,7 @@ public class SwaggerDocumentationConfig {
             .build();
     }
 
-    @Bean
+  /*  @Bean
     public Docket customImplementation(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
@@ -36,6 +43,25 @@ public class SwaggerDocumentationConfig {
                 .directModelSubstitute(org.threeten.bp.LocalDate.class, java.sql.Date.class)
                 .directModelSubstitute(org.threeten.bp.OffsetDateTime.class, java.util.Date.class)
                 .apiInfo(apiInfo());
+    }*/
+
+          @Bean
+    public Docket api() { 
+        return new Docket(DocumentationType.SWAGGER_2)  
+          .select()                                  
+          .apis(RequestHandlerSelectors.any())              
+          .paths(PathSelectors.any())                          
+          .build();                                           
     }
+    
+public void addResourceHandlers(ResourceHandlerRegistry registry) {
+    System.out.println(" inside swaggerconfig class file ");
+    registry.addResourceHandler("swagger-ui.html")
+            .addResourceLocations("classpath:/META-INF/resources/");
+
+    registry.addResourceHandler("/webjars/**")
+            .addResourceLocations("classpath:/META-INF/resources/webjars/");
+}
 
 }
+

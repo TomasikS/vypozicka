@@ -39,20 +39,7 @@ public interface PetApi {
         method = RequestMethod.DELETE)
     ResponseEntity<Void> deletePet(@ApiParam(value = "Pet id to delete",required=true) @PathVariable("petId") Long petId,@ApiParam(value = "" ) @RequestHeader(value="api_key", required=false) String apiKey);
 
-    /**
-     *
-     * @param petId
-     * @return
-     */
-    @ApiOperation(value = "Find pet by ID", nickname = "getPetById", notes = "Returns a single pet", response = Pet.class, tags={ "pet", })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 200, message = "successful operation", response = Pet.class),
-        @ApiResponse(code = 400, message = "Invalid ID supplied"),
-        @ApiResponse(code = 404, message = "Pet not found") })
-    @RequestMapping(value = "/pet/{id}",
-        produces = { "application/xml", "application/json" }, 
-        method = RequestMethod.GET)
-    ResponseEntity<Pet> getPetById(@ApiParam(value = "ID of pet to return",required=true) @PathVariable("petId") Long petId);
+ 
 
 
     @ApiOperation(value = "Update an existing pet", nickname = "updatePet", notes = "", tags={ "pet", })

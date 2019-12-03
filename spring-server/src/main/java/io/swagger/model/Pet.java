@@ -21,28 +21,88 @@ import javax.validation.constraints.*;
 @Entity
 public class Pet implements Serializable {
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDatumpozicania() {
+        return datumpozicania;
+    }
+
+    public void setDatumpozicania(String datumpozicania) {
+        this.datumpozicania = datumpozicania;
+    }
+
+    public String getDatumvratenia() {
+        return datumvratenia;
+    }
+
+    public void setDatumvratenia(String datumvratenia) {
+        this.datumvratenia = datumvratenia;
+    }
+
+    public String getMaxdatum() {
+        return maxdatum;
+    }
+
+    public void setMaxdatum(String maxdatum) {
+        this.maxdatum = maxdatum;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    @ApiModelProperty(notes = "The employee email id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @JsonProperty("id")
     private Long id = null;
 
+    @ApiModelProperty(notes = "The employee email id")
     @JsonProperty("name")
+    @Column(name = "name")
     private String name = null;
 
+    @ApiModelProperty(notes = "The employee email id")
+    @Column(name = "datumpozicania")
     @JsonProperty("datumpozicania")
     private String datumpozicania = null;
 
+    @ApiModelProperty(notes = "The employee email id")
+    @Column(name = "datumvratenia")
     @JsonProperty("datumvratenia")
     private String datumvratenia = null;
 
+    @ApiModelProperty(notes = "The employee email id")
+    @Column(name = "maxdatum")
     @JsonProperty("maxdatum")
     private String maxdatum = null;
 
+    @ApiModelProperty(notes = "The employee email id")
+    @Column(name = "note")
     @JsonProperty("note")
     private String note = null;
 
-    @ApiModelProperty(example = "doggie", required = true, value = "")
+
+    /*  @ApiModelProperty(example = "doggie", required = true, value = "")
 
     public String getDatumpozicania() {
         return datumpozicania;
@@ -90,7 +150,7 @@ public class Pet implements Serializable {
      * @return id
      *
      */
-    @ApiModelProperty(value = "")
+ /*   @ApiModelProperty(required = true, value="" )
 
     public Long getId() {
         return id;
@@ -103,15 +163,14 @@ public class Pet implements Serializable {
     public Pet name(String name) {
         this.name = name;
         return this;
-    }
-
+    }*/
     /**
      * Get name
      *
      * @return name
      *
      */
-    @ApiModelProperty(example = "doggie", required = true, value = "")
+    /* @ApiModelProperty(example = "doggie", required = true, value = "")
     @NotNull
 
     public String getName() {
@@ -120,7 +179,7 @@ public class Pet implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
+    }/*
 
     @Override
     public boolean equals(java.lang.Object o) {

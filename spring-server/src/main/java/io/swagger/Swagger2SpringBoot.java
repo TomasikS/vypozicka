@@ -7,10 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
 @SpringBootApplication
-@EnableSwagger2
 @ComponentScan(basePackages = { "io.swagger", "io.swagger.api" , "io.swagger.configuration", "io.swagger.model", "io.swagger.repository", "io.swagger.service"})
 @EnableJpaRepositories(basePackages = {"io.swagger.repository"})
 public class Swagger2SpringBoot implements CommandLineRunner {
@@ -35,4 +32,6 @@ public class Swagger2SpringBoot implements CommandLineRunner {
         }
 
     }
+    
+  
 }

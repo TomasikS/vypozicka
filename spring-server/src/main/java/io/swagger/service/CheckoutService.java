@@ -12,13 +12,13 @@ import io.swagger.model.Pet;
  * @author stefan.tomasik
  */
 public interface CheckoutService {
-public Pet addBook(Pet book);
+public Pet addCheckout(Pet book);
 
-    Pet updateBook(Pet book);
+    Pet updateCheckout(Pet book);
 
-    Pet getBookById(long id);
+    Pet getCheckoutById(long id);
 
-    void deleteBook(long id);
+    void deleteCheckout(long id);
 
     
 }
