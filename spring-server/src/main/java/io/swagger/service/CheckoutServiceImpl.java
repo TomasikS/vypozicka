@@ -29,7 +29,7 @@ public class CheckoutServiceImpl implements CheckoutService {
     
     @Override
     public Pet updateCheckout(Pet checkout) {
-        checkout = service.findOne(Example.of(checkout)).get();
+        checkout = service.findById(checkout.getId()).get();
         return service.save(checkout);
     }
     
