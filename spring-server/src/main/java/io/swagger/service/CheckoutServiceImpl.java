@@ -9,7 +9,6 @@ import io.swagger.model.Pet;
 import io.swagger.repository.CheckoutRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 /**
@@ -24,7 +23,7 @@ public class CheckoutServiceImpl implements CheckoutService {
     
     @Override
     public Pet addCheckout(Pet checkout) {
-        return service.save(checkout);              //To change body of generated methods, choose Tools | Templates.
+        return service.save(checkout);             
     }
     
     @Override

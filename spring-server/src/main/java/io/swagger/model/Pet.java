@@ -1,6 +1,5 @@
 package io.swagger.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -10,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.springframework.validation.annotation.Validated;
-import javax.validation.constraints.*;
 
 /**
  * Pet
@@ -101,6 +99,31 @@ public class Pet implements Serializable {
     @JsonProperty("note")
     private String note = null;
 
+    public Integer getIdBook() {
+        return idBook;
+    }
+
+    public void setIdBook(Integer idBook) {
+        this.idBook = idBook;
+    }
+
+    public Integer getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Integer idUser) {
+        this.idUser = idUser;
+    }
+
+    @ApiModelProperty(notes = "The employee email id")
+    @Column(name = "idbook")
+    @JsonProperty("idbook")
+    private Integer idBook;
+
+    @ApiModelProperty(notes = "The employee email id")
+    @Column(name = "idUser")
+    @JsonProperty("idUser")
+    private Integer idUser;
 
     /*  @ApiModelProperty(example = "doggie", required = true, value = "")
 
@@ -223,12 +246,16 @@ public class Pet implements Serializable {
     public Pet() {
     }
 
-    public Pet(Long i, String name, String datumPozicania, String datumVratenia, String maxdatum, String note) {
+   public Pet(Long i, String name, String datumPozicania, String datumVratenia, String maxdatum, String note, Integer idUser,Integer idBook) {
         this.id = i;
         this.name = name;
         this.datumpozicania = datumPozicania;
         this.datumvratenia = datumVratenia;
         this.maxdatum = maxdatum;
         this.note = note;
+        this.idUser=idUser;
+        this.idBook=idBook;
     }
+    
+    
 }
