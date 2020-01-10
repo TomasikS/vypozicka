@@ -18,6 +18,7 @@ io\swagger\configuration\CustomInstantDeserializer$7.class
 io\swagger\Swagger2SpringBoot.class
 io\swagger\api\ApiOriginFilter.class
 io\swagger\Swagger2SpringBoot$ExitException.class
+io\swagger\service\PomDatabase.class
 io\swagger\configuration\CustomInstantDeserializer$9.class
 io\swagger\configuration\CustomInstantDeserializer$12.class
 io\swagger\api\NotFoundException.class
