@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: io.swagger.test.CheckoutTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.674 s - in io.swagger.test.CheckoutTest
+Tests run: 4, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.953 s <<< FAILURE! - in io.swagger.test.CheckoutTest
+GetCheckout  Time elapsed: 0.063 s  <<< ERROR!
+java.lang.NullPointerException
+	at io.swagger.test.CheckoutTest.GetCheckout(CheckoutTest.java:69)
+
